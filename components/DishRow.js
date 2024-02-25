@@ -16,29 +16,29 @@ const DishRow = ({ item }) => {
     dispatch(addToCart({ ...item }));
   };
   const handleDecrease = () => {
-    dispatch(removeFromCart({ id: item.id }));
+    dispatch(removeFromCart({ id: item?.id }));
   };
 
-  const totalItems = useSelector((state) => selectCartItemById(state, item.id));
+  const totalItems = useSelector((state) =>
+    selectCartItemById(state, item?.id)
+  );
 
-  console.log("item in dish row : ", item);
-  console.log("totalItems : ", totalItems);
   return (
     <View className="flex-row items-center bg-white p-3 rounded-3xl shadow-2xl mb-3 mx-2">
       <Image
         className="rounded-3xl"
-        source={item.image}
+        source={item?.image}
         style={{ height: 100, width: 100 }}
       />
       <View className="flex flex-1 space-y-3">
         <View className="pl-3">
-          <Text className="text-xl">{item.name} </Text>
-          <Text className="text-gray-700">{item.description} </Text>
+          <Text className="text-xl">{item?.name} </Text>
+          <Text className="text-gray-700">{item?.description} </Text>
         </View>
 
         <View className="flex-row justify-between items-center pl-3">
           <Text className="text-gray-700 text-lg font-bold">
-            ${item.price}{" "}
+            ${item?.price}{" "}
           </Text>
           <View className="flex-row items-center">
             <TouchableOpacity

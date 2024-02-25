@@ -23,7 +23,7 @@ const RestaurantScreen = () => {
   let item = params;
 
   useEffect(() => {
-    if (item && item.id) {
+    if (item && item?.id) {
       dispatch(setRestaurant({ ...item }));
     }
   }, []);
@@ -34,7 +34,7 @@ const RestaurantScreen = () => {
       <StatusBar style="light" />
       <ScrollView>
         <View className="relative">
-          <Image className="w-full h-72" source={item.image} />
+          <Image className="w-full h-72" source={item?.image} />
           <TouchableOpacity
             className="absolute top-14 left-4 bg-gray-50 p-2 rounded-full shadow"
             onPress={() => navigation.goBack()}
@@ -48,7 +48,7 @@ const RestaurantScreen = () => {
           className="bg-white -mt-12 pt-6"
         >
           <View className="px-5">
-            <Text className="text-3xl font-bold">{item.name} </Text>
+            <Text className="text-3xl font-bold">{item?.name} </Text>
             <View className="flex-row my-1 space-x-2">
               <View className="flex-row items-center space-x-1">
                 <Image
@@ -56,10 +56,10 @@ const RestaurantScreen = () => {
                   className="h-4 w-4"
                 />
                 <Text className="text-xs">
-                  <Text className="text-gray-700">{item.stars}</Text>
+                  <Text className="text-gray-700">{item?.stars}</Text>
                   <Text className="text-gray-700">
-                    ({item.reviews} review) ·{" "}
-                    <Text className="font-semibold">{item.category} </Text>
+                    ({item?.reviews} review) ·{" "}
+                    <Text className="font-semibold">{item?.category} </Text>
                   </Text>
                 </Text>
               </View>
@@ -67,12 +67,12 @@ const RestaurantScreen = () => {
               <View className="flex-row items-center space-x-1">
                 <Icon name="map-pin" color="gray" size={15} />
                 <Text className="text-xs text-gray-700">
-                  Nearby · {item.address}
+                  Nearby · {item?.address}
                 </Text>
               </View>
             </View>
 
-            <Text className="text-gray-500 mt-2">{item.description}</Text>
+            <Text className="text-gray-500 mt-2">{item?.description}</Text>
           </View>
         </View>
 
@@ -80,7 +80,7 @@ const RestaurantScreen = () => {
           <Text className="px-4 py-4 text-2xl font-bold">Menu</Text>
           {/* dishes */}
 
-          {item.dishes.map((dish, index) => {
+          {item?.dishes?.map((dish, index) => {
             return <DishRow item={dish} key={index} />;
           })}
         </View>
