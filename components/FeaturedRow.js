@@ -1,10 +1,4 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import themeColors from "./../theme/index";
 import RestaurantCard from "./RestaurantCard";
@@ -40,5 +34,3 @@ const FeaturedRow = ({ title, description, restaurants }) => {
 };
 
 export default FeaturedRow;
-
-const styles = StyleSheet.create({});

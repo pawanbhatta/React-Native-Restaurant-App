@@ -1,17 +1,15 @@
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TouchableWithoutFeedback,
-  View,
-} from "react-native";
+import { Image, Text, TouchableWithoutFeedback, View } from "react-native";
 import React from "react";
 import Icon from "react-native-vector-icons/Feather";
 import themeColors from "./../theme/index";
+import { useNavigation } from "@react-navigation/native";
 
 const RestaurantCard = ({ item }) => {
+  const navigation = useNavigation();
   return (
-    <TouchableWithoutFeedback>
+    <TouchableWithoutFeedback
+      onPress={() => navigation.navigate("Restaurant", { ...item })}
+    >
       <View
         style={{ shadowColor: themeColors.bgColor(0.2), shadowRadius: 7 }}
         className="mr-6 bg-white rounded-3xl shadow-lg"
@@ -46,5 +44,3 @@ const RestaurantCard = ({ item }) => {
 };
 
 export default RestaurantCard;
-
-const styles = StyleSheet.create({});

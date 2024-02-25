@@ -1,11 +1,4 @@
-import {
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { ScrollView, StatusBar, Text, TextInput, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/Feather";
@@ -39,7 +32,7 @@ const HomeScreen = () => {
 
       {/* main */}
       <ScrollView
-        showsVerticalScrollIndicator={true}
+        showsVerticalScrollIndicator={false}
         contentContainerStyle={{
           paddingBottom: 20,
         }}
@@ -66,5 +59,3 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
-
-const styles = StyleSheet.create({});

@@ -1,11 +1,4 @@
-import {
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import { categories } from "../constants";
 
@@ -49,5 +42,3 @@ const Categories = () => {
 };
 
 export default Categories;
-
-const styles = StyleSheet.create({});
